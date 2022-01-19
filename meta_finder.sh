@@ -12,7 +12,7 @@ else
         echo " "
         echo -e "\033[01;32m [*]\033[00;37m BUSCANDO POR ARQUIVOS .$2 PERTENCENTES AO SITE $1..."
         echo " "
-        lynx --dump "www.google.com/search?q=site:$1+ext:$2" | grep ".$2" | cut -d "=" -f2 | egrep -v "site|google" | sed 's/...$//' | grep "//" | sed 's/\?l//' > busc>
+        lynx --dump "www.google.com/search?q=site:$1+ext:$2" | grep ".$2" | cut -d "=" -f2 | egrep -v "site|google" | sed 's/...$//' | grep "//" | sed 's/\?l//' > busca_google
         mkdir ArquivosExif 2>/dev/null
 
         for url in $(cat busca_google);
